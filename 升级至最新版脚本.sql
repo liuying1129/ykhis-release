@@ -5,6 +5,12 @@
 ALTER TABLE treat_master DROP COLUMN patient_birthday;
 ALTER TABLE treat_master_bak DROP COLUMN patient_birthday;
 
+-- UPDATE treat_slave set if_skin_test='1' WHERE if_skin_test='是';
+alter table treat_slave modify column if_skin_test tinyint(1) COMMENT '是否皮试';
+
+-- UPDATE treat_slave_bak set if_skin_test='1' WHERE if_skin_test='是';
+alter table treat_slave_bak modify column if_skin_test tinyint(1) COMMENT '是否皮试';
+
 
 -- -------------函数相关操作---------------
 
