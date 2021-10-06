@@ -17,6 +17,10 @@ DROP TABLE IF EXISTS `xm`;
 DROP TABLE IF EXISTS `tmp003`;
 DROP TABLE IF EXISTS `tmp001`;
 
+-- 2021-10-06
+alter table treat_slave add COLUMN prescription_no int COMMENT '处方序号';
+alter table treat_slave_bak add COLUMN prescription_no int COMMENT '处方序号';
+
 -- -------------函数相关操作---------------
 
 
@@ -62,7 +66,9 @@ CREATE TRIGGER `tg_treat_master_bf_insert_pinyin` BEFORE INSERT ON `treat_master
 END;
 
 -- -------------数据相关操作---------------
-
+-- 2021-10-06
+UPDATE treat_slave set prescription_no=0 WHERE item_type in ('西药','中药') and prescription_no is null;
+UPDATE treat_slave_bak set prescription_no=0 WHERE item_type in ('西药','中药') and prescription_no is null;
 
 
 -- -------------表约束、索引相关操作---------------
