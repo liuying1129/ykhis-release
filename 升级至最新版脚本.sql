@@ -21,6 +21,20 @@ DROP TABLE IF EXISTS `tmp001`;
 alter table treat_slave add COLUMN prescription_no int COMMENT '处方序号';
 alter table treat_slave_bak add COLUMN prescription_no int COMMENT '处方序号';
 
+-- 2022-12-24增加挂号字段
+-- 挂号源（医生直接挂号、挂号处挂号）、看诊日期、午别、号别、科室(department)、医生(operator)
+alter table treat_master add COLUMN register_src varchar(10) COMMENT '挂号源（科室医生挂号:doctor、挂号处挂号:register）';
+alter table treat_master_bak add COLUMN register_src varchar(10) COMMENT '挂号源（科室医生挂号:doctor、挂号处挂号:register）';
+
+alter table treat_master add COLUMN register_treat_date datetime COMMENT '看诊日期';
+alter table treat_master_bak add COLUMN register_treat_date datetime COMMENT '看诊日期';
+
+alter table treat_master add COLUMN register_morning_afternoon varchar(10) COMMENT '午别（上午、下午、全天）';
+alter table treat_master_bak add COLUMN register_morning_afternoon varchar(10) COMMENT '午别（上午、下午、全天）';
+
+alter table treat_master add COLUMN register_no_type varchar(20) COMMENT '号别（普通号、专家号）';
+alter table treat_master_bak add COLUMN register_no_type varchar(20) COMMENT '号别（普通号、专家号）';
+
 -- -------------函数相关操作---------------
 
 
