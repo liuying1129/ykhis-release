@@ -26,8 +26,8 @@ alter table treat_slave_bak add COLUMN prescription_no int COMMENT '处方序号
 alter table treat_master add COLUMN register_src varchar(10) COMMENT '挂号源（科室医生挂号:doctor、挂号处挂号:register）';
 alter table treat_master_bak add COLUMN register_src varchar(10) COMMENT '挂号源（科室医生挂号:doctor、挂号处挂号:register）';
 
-alter table treat_master add COLUMN register_treat_date datetime COMMENT '看诊日期';
-alter table treat_master_bak add COLUMN register_treat_date datetime COMMENT '看诊日期';
+alter table treat_master add COLUMN register_treat_date date COMMENT '看诊日期';
+alter table treat_master_bak add COLUMN register_treat_date date COMMENT '看诊日期';
 
 alter table treat_master add COLUMN register_morning_afternoon varchar(10) COMMENT '午别（上午、下午、全天）';
 alter table treat_master_bak add COLUMN register_morning_afternoon varchar(10) COMMENT '午别（上午、下午、全天）';
