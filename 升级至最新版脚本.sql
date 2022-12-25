@@ -35,6 +35,9 @@ alter table treat_master_bak add COLUMN register_morning_afternoon varchar(10) C
 alter table treat_master add COLUMN register_no_type varchar(20) COMMENT '号别（普通号、专家号）';
 alter table treat_master_bak add COLUMN register_no_type varchar(20) COMMENT '号别（普通号、专家号）';
 
+alter table treat_master add COLUMN register_operator varchar(20) COMMENT '挂号员';
+alter table treat_master_bak add COLUMN register_operator varchar(20) COMMENT '挂号员';
+
 -- -------------函数相关操作---------------
 
 
